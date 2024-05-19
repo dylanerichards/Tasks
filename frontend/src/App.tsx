@@ -1,10 +1,9 @@
 import Tasks from "./components/Tasks"
-import { ApolloClient, InMemoryCache, ApolloProvider, gql, useQuery } from '@apollo/client';
-// import { GET_TASK } from './graphql/queries';
+import { useQuery } from '@apollo/client';
 import { GET_TASKS } from './graphql/queries';
 
 function App() {
-  const { data, loading, error } = useQuery(GET_TASKS);
+  const { data, loading } = useQuery(GET_TASKS);
 
   if (loading) return <p>Loading...</p>;
 
@@ -13,7 +12,6 @@ function App() {
   return (
     <Tasks tasks={tasks} ></Tasks>
   )
-
 }
 
 export default App;

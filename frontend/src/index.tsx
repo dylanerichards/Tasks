@@ -4,10 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
-import { useQuery } from '@apollo/client';
-// import { GET_TASKS } from './graphql/queries';
-import { GET_TASK } from './graphql/queries';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({
   uri: "http://localhost:3000/graphql",
