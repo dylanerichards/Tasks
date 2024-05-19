@@ -22,3 +22,5 @@ group :development do
 end
 
 gem "graphql"
+gem "graphiql-rails"
+gem "rack-cors"

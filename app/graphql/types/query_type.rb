@@ -6,8 +6,14 @@ module Types
       argument :id, ID, required: true
     end
 
+    field :tasks, [Types::TaskType], null: false
+
     def task(id:)
       Task.find(id)
+    end
+
+    def tasks
+      Task.all
     end
 
   end
