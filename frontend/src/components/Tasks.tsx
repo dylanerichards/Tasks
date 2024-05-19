@@ -14,8 +14,14 @@ interface TasksProps {
 
 const Tasks: React.FC<TasksProps> = ({ tasks }) => {
 
-  return (
-    <div className="tasks-list">
+
+
+return (
+
+
+<div className="container flex flex-col items-center justify-center w-full mx-auto mt-10">
+    <h1 className="text-xl font-extrabold">Tasks</h1>
+    <ul className="flex flex-col mt-5">
       {tasks.map((task, index) => (
         <Task
           key={index}
@@ -25,8 +31,14 @@ const Tasks: React.FC<TasksProps> = ({ tasks }) => {
           dueDate={new Date(task.dueDate)}
         />
       ))}
-    </div>
-  );
-};
+    </ul>
+</div>
+
+)
+
+}
+
+
+;
 
 export default Tasks;
