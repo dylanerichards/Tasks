@@ -13,9 +13,10 @@ export const GET_TASKS = gql`
   }
 `;
 
-export const GET_TASK = gql`
-  query {
-    task(id: "4") {
+
+export const GET_TASK_BY_ID = gql`
+  query FindTaskById($id: ID!) {
+    task(id: $id) {
       id
       title
       description
@@ -23,5 +24,4 @@ export const GET_TASK = gql`
       dueDate
     }
   }
-
 `;
