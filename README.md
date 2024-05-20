@@ -4,12 +4,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLbtxtl6LKy5wHzwE48zGK8-guKLn3zvSnjmCOh19KBA&s" alt="Logo" width="80" height="80">
-
-  <h3 align="center">HelloFresh OrderService</h3>
+    <img src="https://cdn-ukwest.onetrust.com/logos/482e1d62-3155-421c-b076-164accc90adf/3a979462-e491-4893-8016-3151c3826269/30d03a3c-557b-4988-b21a-d4e1c313a3ce/Task_Logo_colour.jpg" alt="Logo" width="80" height="80">
 
   <p align="center">
-	A microservice for placing orders
+	A service for managing tasks
     <br />
     <br />
   </p>
@@ -37,7 +35,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#architecture-and-technical-considerations">Architecture and Technical Considerations</a></li>
-    <li><a href="#testing">Testing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -52,6 +49,8 @@ This is a Ruby on Rails API that can be used create Users, Products, and Orders.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Acceptance Criteria
+<a name="acceptance-criteria"></a>
+
 
 #### Back-End
 
@@ -139,7 +138,7 @@ Coming soon...
 6. In another terminal window, `cd` to `frontend/` and install its dependencies with `npm install`
 7. Start the frontend server with `npm start`. Since the backend is already running, it will ask you to start on a different port. Reply "yes" to this.
 
-The frontend and backend are now both running and you are ready to click around and use the application!
+The frontend and backend are now both running and you are ready to click around and use the application at `localhost:3001`
 
 
 <!-- USAGE EXAMPLES -->
@@ -151,6 +150,10 @@ The frontend and backend are now both running and you are ready to click around 
 
 ## Architecture and Technical Considerations
 <a name="architecture-and-technical-considerations"></a>
+
+Coming soon...
+
+### Future enhancements
 
 Coming soon...
 
