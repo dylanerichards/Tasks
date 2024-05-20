@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FormEvent } from 'react';
 
-import { Link, useParams } from 'react-router-dom';
-import { GET_TASK_BY_ID } from '../graphql/queries';
-import { useQuery } from '@apollo/client';
+import { useParams } from 'react-router-dom';
+import { GET_TASK_BY_ID, UPDATE_TASK } from '../graphql/queries';
+import { useQuery, useMutation } from '@apollo/client';
 
 
 const EditTaskPage: React.FC = () => {
@@ -12,6 +12,15 @@ const EditTaskPage: React.FC = () => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [completed, setCompleted] = useState(false)
+
+  const [updateTask] = useMutation(UPDATE_TASK);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const variables = { variables: { id: task_id, title, description, completed } }
+    console.log(variables)
+    updateTask(variables);
+  };
 
   useEffect(() => {
     if (data && data.task) {
@@ -35,7 +44,7 @@ const EditTaskPage: React.FC = () => {
   return (
     <div className="flex justify-center items-center h-screen">
 
-      <form className="flex w-full max-w-sm space-x-3">
+      <form className="flex w-full max-w-sm space-x-3" onSubmit={handleSubmit}>
         <div className="w-full max-w-2xl px-5 py-10 m-auto mt-10 bg-white rounded-lg shadow dark:bg-gray-800">
           <div className="mb-6 text-3xl font-light text-center text-gray-800 dark:text-white">
             Editing Task
@@ -68,7 +77,7 @@ const EditTaskPage: React.FC = () => {
 
             <div className="col-span-2 text-right">
               <button type="submit" className="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                Send
+                Submit
               </button>
             </div>
           </div>

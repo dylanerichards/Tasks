@@ -25,3 +25,17 @@ export const GET_TASK_BY_ID = gql`
     }
   }
 `;
+
+export const UPDATE_TASK = gql`
+  mutation UpdateTask($id: ID!, $title: String!, $description: String!, $completed: Boolean!) {
+    updateTask(input: { id: $id, title: $title, description: $description, completed: $completed }) {
+      task {
+        id
+        title
+        description
+        completed
+      }
+      errors
+    }
+  }
+`;
