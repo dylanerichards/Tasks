@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import Navbar from "./components/Navbar"
+
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -20,7 +22,8 @@ root.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
       <React.StrictMode>
-        <App />
+        <Navbar/>
+        <App/>
       </React.StrictMode>
     </BrowserRouter>
   </ApolloProvider>

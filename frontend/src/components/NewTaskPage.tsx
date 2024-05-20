@@ -1,42 +1,28 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 
-import { useParams, useNavigate } from 'react-router-dom';
-import { GET_TASK_BY_ID, UPDATE_TASK } from '../graphql/queries';
-import { useQuery, useMutation } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
+import { CREATE_TASK } from '../graphql/queries';
+import {  useMutation } from '@apollo/client';
 
 
 const EditTaskPage: React.FC = () => {
   const navigate = useNavigate();
 
-  const { task_id } = useParams();
-  const { data, loading } = useQuery(GET_TASK_BY_ID, { variables: { id: task_id } });
-
-
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [completed, setCompleted] = useState(false)
 
-  const [updateTask] = useMutation(UPDATE_TASK);
+  const [createTask] = useMutation(CREATE_TASK);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    const variables = { variables: { id: task_id, title, description, completed } }
-    console.log(variables)
-    updateTask(variables);
-    navigate(`/tasks/${task_id}`);
+
+    const variables = { variables: { title, description, completed } }
+    createTask(variables);
+
+    navigate(`/`);
+    window.location.reload()
   };
-
-  useEffect(() => {
-    if (data && data.task) {
-      setTitle(task.title);
-      setDescription(task.description);
-      setCompleted(task.completed);
-    }
-  }, [data]);
-
-  if (loading) return <p>Loading...</p>;
-
-  const task = data.task
 
   const handleTitleChange = (e: any) => setTitle(e.target.value);
   const handleDescriptionChange = (e: any) => setDescription(e.target.value);
@@ -51,7 +37,7 @@ const EditTaskPage: React.FC = () => {
       <form className="flex w-full max-w-sm space-x-3" onSubmit={handleSubmit}>
         <div className="w-full max-w-2xl px-5 py-10 m-auto mt-10 bg-white rounded-lg shadow dark:bg-gray-800">
           <div className="mb-6 text-3xl font-light text-center text-gray-800 dark:text-white">
-            Editing Task
+            New Task
           </div>
           <div className="grid max-w-xl grid-cols-2 gap-4 m-auto">
             <div className="col-span-2 lg:col-span-1">
