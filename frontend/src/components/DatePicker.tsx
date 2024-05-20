@@ -6,10 +6,12 @@ import { format } from 'date-fns';
 
 interface DatepickerProps {
   onDateChange: (date: Date | null) => void;
+  defaultDate?: Date;
 }
 
-const Datepicker: React.FC<DatepickerProps> = ({ onDateChange }) => {
+const Datepicker: React.FC<DatepickerProps> = ({ onDateChange, defaultDate }) => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+
 
   const handleDateChange = (date: Date | null) => {
     setSelectedDate(date);
@@ -19,7 +21,7 @@ const Datepicker: React.FC<DatepickerProps> = ({ onDateChange }) => {
   return (
     <div className="flex flex-col space-y-2">
       <DatePicker
-        selected={selectedDate}
+        selected={selectedDate || defaultDate}
         onChange={handleDateChange}
         dateFormat="MMMM d, yyyy"
         className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"

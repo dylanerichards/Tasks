@@ -37,6 +37,7 @@ const EditTaskPage: React.FC = () => {
       setTitle(task.title);
       setDescription(task.description);
       setCompleted(task.completed);
+      setDate(task.dueDate);
     }
   }, [data]);
 
@@ -73,7 +74,7 @@ const EditTaskPage: React.FC = () => {
             </div>
 
             <div className="col-span-2">
-                <Datepicker onDateChange={handleDateChange} />
+                <Datepicker onDateChange={handleDateChange} defaultDate={date || new Date()}/>
             </div>
 
             <div>

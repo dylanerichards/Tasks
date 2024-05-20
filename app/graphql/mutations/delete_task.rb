@@ -4,6 +4,7 @@ module Mutations
   
       field :success, Boolean, null: false
       field :errors, [String], null: false
+
   
       def resolve(id:)
         task = Task.find_by(id: id)
