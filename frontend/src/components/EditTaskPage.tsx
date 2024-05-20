@@ -1,13 +1,16 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { GET_TASK_BY_ID, UPDATE_TASK } from '../graphql/queries';
 import { useQuery, useMutation } from '@apollo/client';
 
 
 const EditTaskPage: React.FC = () => {
+  const navigate = useNavigate();
+
   const { task_id } = useParams();
   const { data, loading } = useQuery(GET_TASK_BY_ID, { variables: { id: task_id } });
+
 
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
@@ -20,6 +23,7 @@ const EditTaskPage: React.FC = () => {
     const variables = { variables: { id: task_id, title, description, completed } }
     console.log(variables)
     updateTask(variables);
+    navigate(`/tasks/${task_id}`);
   };
 
   useEffect(() => {
