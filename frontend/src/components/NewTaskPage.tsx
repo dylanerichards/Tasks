@@ -3,6 +3,7 @@ import React, { useState, useEffect, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CREATE_TASK } from '../graphql/queries';
 import {  useMutation } from '@apollo/client';
+import Datepicker from './DatePicker';
 
 
 const EditTaskPage: React.FC = () => {
@@ -11,13 +12,23 @@ const EditTaskPage: React.FC = () => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [completed, setCompleted] = useState(false)
+  const [date, setDate] = useState<Date | null>(null);
+
 
   const [createTask] = useMutation(CREATE_TASK);
+
+  const handleDateChange = (date: Date | null) => {
+    setDate(date);
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    const variables = { variables: { title, description, completed } }
+    const variables = { variables: { title, description, completed, dueDate: date } }
+
+    // console.log(variables)
+    // console.log( date?.toDateString())
+
     createTask(variables);
 
     navigate(`/`);
@@ -50,6 +61,10 @@ const EditTaskPage: React.FC = () => {
                 <textarea value={description} onChange={handleDescriptionChange} className="flex-1 w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" id="comment" placeholder="description" name="description" rows={5} cols={40}>
                 </textarea>
               </label>
+            </div>
+
+            <div className="col-span-2">
+                <Datepicker onDateChange={handleDateChange} />
             </div>
 
             <div>

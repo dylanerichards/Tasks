@@ -27,13 +27,14 @@ export const GET_TASK_BY_ID = gql`
 `;
 
 export const UPDATE_TASK = gql`
-  mutation UpdateTask($id: ID!, $title: String!, $description: String!, $completed: Boolean!) {
-    updateTask(input: { id: $id, title: $title, description: $description, completed: $completed }) {
+  mutation UpdateTask($id: ID!, $title: String!, $description: String!, $completed: Boolean!, $dueDate: String!) {
+    updateTask(input: { id: $id, title: $title, description: $description, completed: $completed, dueDate: $dueDate }) {
       task {
         id
         title
         description
         completed
+        dueDate
       }
       errors
     }
@@ -41,13 +42,14 @@ export const UPDATE_TASK = gql`
 `;
 
 export const CREATE_TASK = gql`
-  mutation UpdateTask($title: String!, $description: String!, $completed: Boolean!) {
-    createTask(input: {title: $title, description: $description, completed: $completed }) {
+  mutation CreateTask($title: String!, $description: String!, $completed: Boolean!, $dueDate: String!) {
+    createTask(input: {title: $title, description: $description, completed: $completed, dueDate: $dueDate }) {
       task {
         id
         title
         description
         completed
+        dueDate
       }
       errors
     }
