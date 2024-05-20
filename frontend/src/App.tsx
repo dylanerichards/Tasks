@@ -21,7 +21,6 @@ function App() {
       <Route path="/tasks/new" element={<NewTaskPage/>} />
      </Routes>
   )
-
 }
 
 export default App;
