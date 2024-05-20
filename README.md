@@ -123,16 +123,23 @@ This is a Ruby on Rails API that can be used create Users, Products, and Orders.
 ### Prerequisites
 <a name="prerequisites"></a>
 
+- Ruby 3.2.3
+- NPM
+
 Coming soon...
 
 ### Installation and First Steps
 <a name="installation"></a>
 
 1. Clone this repository.
-2. `cd` into it and install the project's dependencies with `docker-compose build`.
-3. Once the dependencies are installed, you can start up the application and background workers with `docker-compose up`. The app will run on port 3000.
-4. To seed the database, stop the application and run `docker-compose run --service-ports web bash` to enter the container. From here, run `rake db:seed` to populate the database with users and products.
+2. `cd` into it and install the backend's dependencies with `bundle install`.
+3. Initialize the databases with `rake db:create` and migrate them with `rake db:migrate`
+4. Start the backend server with `rails server`
+5. In another terminal window, populate the database with seeds with `rake db:seed`
+6. In another terminal window, `cd` to `frontend/` and install its dependencies with `npm install`
+7. Start the frontend server with `npm start`. Since the backend is already running, it will ask you to start on a different port. Reply "yes" to this.
 
+The frontend and backend are now both running and you are ready to click around and use the application!
 
 
 <!-- USAGE EXAMPLES -->
