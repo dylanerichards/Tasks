@@ -201,10 +201,6 @@ It consists of a `Task` model and hosts a number of GraphQL queries and mutation
   </li>
 
   <li>
-    <strong>Model and Form Validation</strong>: Validations enhance data integrity and user experience. It prevents errors and malicious data entry, leading to more reliable and secure application behavior.
-  </li>
-
-  <li>
     <strong>Unit Tests</strong>: Tests improve code quality by helping to minimize bugs, facilitate refactoring, and allows developers to make changes to code confidently. With more time, I would write tests for all of the models, queries, and mutations in the application.
   </li>
 </ul>
