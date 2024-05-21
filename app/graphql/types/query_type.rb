@@ -13,7 +13,7 @@ module Types
     end
 
     def tasks
-      Task.all
+      Task.order(completed: :asc)
     end
 
   end

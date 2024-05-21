@@ -26,10 +26,12 @@ const EditTaskPage: React.FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+
     const variables = { variables: { id: task_id, title, description, completed, dueDate: date } }
-    console.log(variables)
     updateTask(variables);
+
     navigate(`/tasks/${task_id}`);
+    window.location.reload();
   };
 
   const task = data.task
