@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { format } from 'date-fns';
 
 interface DatepickerProps {
   onDateChange: (date: Date | null) => void;
@@ -11,7 +10,6 @@ interface DatepickerProps {
 
 const Datepicker: React.FC<DatepickerProps> = ({ onDateChange, defaultDate }) => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-
 
   const handleDateChange = (date: Date | null) => {
     setSelectedDate(date);

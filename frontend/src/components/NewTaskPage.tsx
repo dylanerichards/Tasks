@@ -1,8 +1,8 @@
-import React, { useState, useEffect, FormEvent } from 'react';
+import React, { useState, FormEvent } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { CREATE_TASK } from '../graphql/queries';
-import {  useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import Datepicker from './DatePicker';
 
 
@@ -14,7 +14,6 @@ const EditTaskPage: React.FC = () => {
   const [completed, setCompleted] = useState(false)
   const [date, setDate] = useState<Date | null>(null);
 
-
   const [createTask] = useMutation(CREATE_TASK);
 
   const handleDateChange = (date: Date | null) => {
@@ -25,9 +24,6 @@ const EditTaskPage: React.FC = () => {
     e.preventDefault();
 
     const variables = { variables: { title, description, completed, dueDate: date } }
-
-    // console.log(variables)
-    // console.log( date?.toDateString())
 
     createTask(variables);
 
@@ -64,7 +60,7 @@ const EditTaskPage: React.FC = () => {
             </div>
 
             <div className="col-span-2">
-                <Datepicker onDateChange={handleDateChange} />
+              <Datepicker onDateChange={handleDateChange} />
             </div>
 
             <div>

@@ -32,6 +32,8 @@ const EditTaskPage: React.FC = () => {
     navigate(`/tasks/${task_id}`);
   };
 
+  const task = data.task
+
   useEffect(() => {
     if (data && data.task) {
       setTitle(task.title);
@@ -39,11 +41,10 @@ const EditTaskPage: React.FC = () => {
       setCompleted(task.completed);
       setDate(task.dueDate);
     }
-  }, [data]);
+  }, [data, task.completed, task.description, task.dueDate, task.title]);
 
   if (loading) return <p>Loading...</p>;
 
-  const task = data.task
 
   const handleTitleChange = (e: any) => setTitle(e.target.value);
   const handleDescriptionChange = (e: any) => setDescription(e.target.value);

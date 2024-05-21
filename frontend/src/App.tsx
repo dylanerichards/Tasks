@@ -16,6 +16,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={ <Tasks tasks={tasks} /> } />
+      <Route path="/tasks" element={ <Tasks tasks={tasks} /> } />
       <Route path="/tasks/:task_id" element={<TaskPage/>} />
       <Route path="/tasks/:task_id/edit" element={<EditTaskPage/>} />
       <Route path="/tasks/new" element={<NewTaskPage/>} />

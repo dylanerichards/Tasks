@@ -91,11 +91,7 @@ This is a Ruby on Rails API that can be used create Users, Products, and Orders.
 ✅ Implement basic security practices to protect data integrity and prevent common vulnerabilities
 
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 
 ### Built With
 <a name="built-with"></a>
@@ -156,6 +152,7 @@ Coming soon...
 ### Future enhancements
 
 Coming soon...
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

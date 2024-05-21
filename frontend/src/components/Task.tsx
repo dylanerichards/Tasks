@@ -11,10 +11,8 @@ interface TaskProps {
 }
 
 const Task: React.FC<TaskProps> = ({ id, title, description, completed, dueDate }) => {
-  const formattedDate = dueDate.toLocaleDateString();
-
   return (
-    <Link to={ `/tasks/${id}` } className="index-button">
+    <Link to={`/tasks/${id}`} className="index-button">
       <li className="flex flex-row mb-2 border-gray-400">
         <div className="shadow border select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
           <div className="flex flex-col items-center justify-center w-10 h-10 mr-4">
@@ -24,7 +22,6 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed, dueDate 
               </svg>
                 : <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="w-6 h-6"> <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" /> </svg>
             }
-
 
           </div>
           <div className="flex-1 pl-1 md:mr-16">
