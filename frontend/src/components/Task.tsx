@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 
 interface TaskProps {
@@ -14,7 +13,7 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed, dueDate 
   return (
     <Link to={`/tasks/${id}`} className="index-button">
       <li className="flex flex-row mb-2 border-gray-400">
-        <div className="shadow border select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4">
+        <div className={`shadow border select-none cursor-pointer bg-white dark:bg-gray-800 rounded-md flex flex-1 items-center p-4 ${completed ? 'line-through' : ''}`}>
           <div className="flex flex-col items-center justify-center w-10 h-10 mr-4">
             {
               completed ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="green" className="w-6 h-6">
@@ -25,14 +24,14 @@ const Task: React.FC<TaskProps> = ({ id, title, description, completed, dueDate 
 
           </div>
           <div className="flex-1 pl-1 md:mr-16">
-            <div className="font-medium dark:text-white">
+            <div className={`font-medium dark:text-white ${completed ? 'line-through' : ''}`}>
               {title}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-200">
+            <div className={`text-sm text-gray-600 dark:text-gray-200 ${completed ? 'line-through' : ''}`}>
               {description}
             </div>
           </div>
-          <div className="text-xs text-gray-600 dark:text-gray-200">
+          <div className={`text-xs text-gray-600 dark:text-gray-200 ${completed ? 'line-through' : ''}`}>
             {(new Date(dueDate)).toLocaleDateString('en-US')}
           </div>
           <button className="flex justify-end w-24 text-right">
