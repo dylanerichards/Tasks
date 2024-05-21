@@ -201,7 +201,7 @@ It consists of a `Task` model and hosts a number of GraphQL queries and mutation
   </li>
 
   <li>
-    <strong>Model and Form Validation</strong>: enhancing data integrity and user experience. It prevents errors and malicious data entry, leading to more reliable and secure application behavior.
+    <strong>Model and Form Validation</strong>: Validations enhance data integrity and user experience. It prevents errors and malicious data entry, leading to more reliable and secure application behavior.
   </li>
 
   <li>
