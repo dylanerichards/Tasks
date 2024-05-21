@@ -13,7 +13,7 @@ module Types
     end
 
     def tasks
-      Task.order(completed: :asc)
+      Task.order(completed: :asc, due_date: :asc)
     end
 
   end

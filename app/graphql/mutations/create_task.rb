@@ -10,19 +10,6 @@ module Mutations
       field :errors, [String], null: false
   
       def resolve(title:, description:, completed:, due_date:)
-        p "##################"
-        p "##################"
-        p "##################"
-        p "##################"
-        p title
-        p description
-        p completed
-        p due_date
-        p "##################"
-        p "##################"
-        p "##################"
-        p "##################"
-
         task = Task.new(title: title, description: description, completed: completed, due_date: due_date)
   
         if task.save
