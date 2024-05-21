@@ -119,8 +119,6 @@ This is a Ruby on Rails API that can be used create Users, Products, and Orders.
 - Ruby 3.2.3
 - NPM
 
-Coming soon...
-
 ### Installation and First Steps
 <a name="installation"></a>
 
@@ -180,6 +178,12 @@ GraphQL queries and mutations are how our front-end application retrieves and up
   <li><strong>mutation UpdateTask</strong>: Updates a Task</li>
   <li><strong>mutation DeleteTask</strong>: Deletes a Task</li>
 </ul>
+
+### The Back-End
+The back-end of this application is built with Ruby on Rails, GraphQL, and Postgres.
+
+It consists of a `Task` model and hosts a number of GraphQL queries and mutations (found in `app/graphpql/mutations/`) that allow the front-end to create, read, update, and delete tasks.
+
 
 ### Future enhancements
 

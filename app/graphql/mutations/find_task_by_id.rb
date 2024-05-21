@@ -6,7 +6,6 @@ module Mutations
       field :errors, [String], null: false
   
       def resolve(id:)
-        p "RESOLVINGGGGGG"
         task = Task.find_by(id: id)
   
         if task.nil?
@@ -17,12 +16,3 @@ module Mutations
       end
     end
   end
-  
-#   curl -X POST http://localhost:3000/graphql \
-#   -H "Content-Type: application/json" \
-#   -d '{
-#     "query": "query FindTaskById($id: ID!) { task(id: $id) { id title description completed } }",
-#     "variables": {
-#       "id": "4"
-#     }
-#   }'
