@@ -197,6 +197,10 @@ It consists of a `Task` model and hosts a number of GraphQL queries and mutation
   </li>
 
   <li>
+    <strong>Universal State Management</strong>: Centralized state management makes the application's state easier to manage, debug, and maintain, especially as the application scales. 
+  </li>
+
+  <li>
     <strong>Unit Tests</strong>: Tests improve code quality by helping to minimize bugs, facilitate refactoring, and allows developers to make changes to code confidently. With more time, I would write tests for all of the models, queries, and mutations in the application.
   </li>
 </ul>
