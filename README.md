@@ -13,8 +13,6 @@
   </p>
 </div>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -151,21 +149,56 @@ The frontend and backend are now both running and you are ready to click around 
   </div>
 
 
-
-
 ## Architecture and Technical Considerations
 <a name="architecture-and-technical-considerations"></a>
 
-Coming soon...
+### The Front-End
+
+The front-end of this application is built with ReactJS, TypeScript, GraphQL, Apollo, and Tailwind and lives in the `frontend/` directory.
+
+#### Components
+The front-end consists of a number of components (found in `src/components/`):
+
+<ul>
+  <li><strong>Task</strong>: A Card-like component used to display the details of a created Task.</li>
+  <li><strong>TaskPage</strong>: Used to display a list of Tasks</li>
+  <li><strong>NewTaskPage</strong>: A form component used to create new Tasks</li>
+  <li><strong>EditTaskPage</strong>: A form component used to edit Tasks</li>
+
+  <li><strong>Datepicker</strong>: A Datepicker component used by the NewTaskPage and EditTaskPage components for due date selection and display</li>
+  <li><strong>Task</strong>: A Card-like component used to display the details of a created Task</li>
+  <li><strong>Navbar</strong>: A component used to display navigation at the top of the application's web pages
+</ul>
+
+#### Queries and Mutations
+GraphQL queries and mutations are how our front-end application retrieves and updates data from our server. This application integrates GraphQL with Apollo for a more declarative querying experience, and sets the stage for exciting ways to scale in the future.
+
+<ul>
+  <li><strong>query GetTasks</strong>: Retrieves all the Tasks</li>
+  <li><strong>query FindTaskById</strong>: Finds a Task by its ID</li>
+  <li><strong>mutation CreateTask</strong>: Creates a new TAsk</li>
+  <li><strong>mutation UpdateTask</strong>: Updates a Task</li>
+  <li><strong>mutation DeleteTask</strong>: Deletes a Task</li>
+</ul>
 
 ### Future enhancements
 
-Coming soon...
+<ul>
+  <li>
+    <strong>Implement container and presentation components</strong>: It's generally a good practice to separate data fetching concerns from presentation concerns in scalable front-end applications. Doing so encourages separation of concerns, enhances reusability, and improves testability.
+  </li>
+
+  <li>
+    <strong>Notifications</strong>: Given more time, I would implement a notification system in the application. This would give the user more feedback and confidence that the application is behaving as it should.
+  </li>
+
+  <li>
+    <strong>Unit Tests</strong>: Tests improve code quality by helping to minimize bugs, facilitate refactoring, and allows developers to make changes to code confidently. With more time, I would write tests for all of the models, queries, and mutations in the application.
+  </li>
+</ul>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
@@ -176,10 +209,7 @@ Dylan Richards - hello@dylanerichards.com
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/dylanerichards
