@@ -141,7 +141,16 @@ The frontend and backend are now both running and you are ready to click around 
 ## Usage
 <a name="usage"></a>
 
-<div style="position: relative; padding-bottom: 56.33802816901409%; height: 0;"><iframe src="https://www.loom.com/embed/84fdc373a2564189baa173a5a446ab8e?sid=f551377e-d7c2-4019-b843-8a65436da6e8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+<div>
+    <a href="https://www.loom.com/share/84fdc373a2564189baa173a5a446ab8e">
+      <p>Task Management App Walkthrough - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/84fdc373a2564189baa173a5a446ab8e">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/84fdc373a2564189baa173a5a446ab8e-with-play.gif">
+    </a>
+  </div>
+
+
 
 
 ## Architecture and Technical Considerations
