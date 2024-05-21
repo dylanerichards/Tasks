@@ -42,7 +42,7 @@ export const UPDATE_TASK = gql`
 `;
 
 export const CREATE_TASK = gql`
-  mutation CreateTask($title: String!, $description: String!, $completed: Boolean!, $dueDate: String!) {
+  mutation CreateTask($title: String!, $description: String, $completed: Boolean, $dueDate: String) {
     createTask(input: {title: $title, description: $description, completed: $completed, dueDate: $dueDate }) {
       task {
         id
