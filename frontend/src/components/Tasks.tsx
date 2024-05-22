@@ -6,7 +6,7 @@ interface Task {
   title: string;
   description: string;
   completed: boolean;
-  dueDate: any;
+  dueDate: string | Date;
 }
 
 interface TasksProps {
@@ -14,25 +14,24 @@ interface TasksProps {
 }
 
 const Tasks: React.FC<TasksProps> = ({ tasks }) => {
-
   return (
     <div className="container flex flex-col items-center justify-center w-full mx-auto mt-10">
       <h1 className="pt-16 text-2xl font-extrabold">Tasks</h1>
 
       <ul className="flex flex-col mt-5">
-        {tasks.map((task, index) => (
+        {tasks.map((task) => (
           <Task
             id={task.id}
             key={task.id}
             title={task.title}
             description={task.description}
             completed={task.completed}
-            dueDate={new Date(task.dueDate)}
+            dueDate={typeof task.dueDate === 'string' ? new Date(task.dueDate) : task.dueDate}
           />
         ))}
       </ul>
     </div>
-  )
+  );
 };
 
 export default Tasks;
