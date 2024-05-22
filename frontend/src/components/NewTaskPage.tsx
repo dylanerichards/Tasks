@@ -1,14 +1,14 @@
 import React, { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CREATE_TASK } from '../graphql/queries';
 import { useMutation } from '@apollo/client';
+import { CREATE_TASK } from '../graphql/queries';
 import Datepicker from './DatePicker';
 
 const NewTaskPage: React.FC = () => {
   const navigate = useNavigate();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [completed, setCompleted] = useState(false);
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [completed, setCompleted] = useState<boolean>(false);
   const [date, setDate] = useState<Date | null>(null);
 
   const [createTask] = useMutation(CREATE_TASK);
@@ -17,14 +17,15 @@ const NewTaskPage: React.FC = () => {
     setDate(date);
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const variables = { variables: { title, description, completed, dueDate: date } };
-    createTask(variables);
-
-    navigate(`/`);
-    window.location.reload();
+    if (date) {
+      createTask({ variables: { title, description, completed, dueDate: date } }).then(() => {
+        navigate(`/`);
+        window.location.reload();
+      });
+    }
   };
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value);
@@ -58,7 +59,7 @@ const NewTaskPage: React.FC = () => {
                   onChange={handleDescriptionChange}
                   className="w-full px-4 py-2 text-base text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                   id="comment"
-                  placeholder="description"
+                  placeholder="Description"
                   name="description"
                   rows={5}
                   cols={40}
